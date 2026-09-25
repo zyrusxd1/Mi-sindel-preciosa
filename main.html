@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi bonita Sindel</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="stars" aria-hidden="true"></div>
+
+    <audio id="music" autoplay loop preload="auto">
+        <source src="sound/ChristianBasso%26HaienQiu-Flowers.mp3" type="audio/mpeg">
+    </audio>
+
+    <main class="page">
+        <article class="letter">
+            <p class="eyebrow">Una carta para mi bonita Sindel</p>
+            <h1>Te quiero mucho, mi bonita Sindel</h1>
+            <p class="subtitle">Para la chica más bonita del universo <span aria-hidden="true">♡</span></p>
+
+            <div class="divider" aria-hidden="true">✦</div>
+
+            <div class="message">
+                <p>Holi mi bonita Sindel, no sé por dónde empezar, siempre estoy buscando la forma correcta de decirte esto. A veces las palabras se quedan cortas, pero necesitaba encontrar la manera de que supieras todo lo que despiertas en mí.</p>
+                <p>Quiero decirte que me gustas mucho, más de lo que quizás te has imaginado. Esto es algo inevitable porque con cada segundo, minuto, hora, día y semana que pasa, me doy cuenta de que este sentimiento solo sigue creciendo.</p>
+                <p>Te convertiste en ese pensamiento bonito que aparece en cada momento y me acompaña todo el día. Estar a tu lado cambia por completo cómo veo las cosas. Contigo, el tiempo tiene otro ritmo y cualquier instante vale la pena.</p>
+                <p>Quería dejarte saber lo infinitamente especial que eres para mí.</p>
+                <p class="signature">Te quiero mucho, mucho, mi preciosa Sindel ❤️❤️❤️❤️</p>
+            </div>
+
+            <button id="playMusic">Reproducir música</button>
+
+            <div class="garden" aria-hidden="true">
+                <div class="flower"><span class="blossom"></span><span class="stem"></span><span class="leaf"></span><span class="leaf right"></span></div>
+                <div class="flower"><span class="blossom"></span><span class="stem"></span><span class="leaf"></span><span class="leaf right"></span></div>
+                <div class="flower"><span class="blossom"></span><span class="stem"></span><span class="leaf"></span><span class="leaf right"></span></div>
+                <div class="flower"><span class="blossom"></span><span class="stem"></span><span class="leaf"></span><span class="leaf right"></span></div>
+                <span class="ground"></span>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        const music = document.getElementById('music');
+        const playMusic = document.getElementById('playMusic');
+
+        music.volume = 0.65;
+        music.addEventListener('playing', () => { playMusic.hidden = true; });
+        music.addEventListener('error', () => { playMusic.hidden = false; });
+        music.play().catch(() => { playMusic.hidden = false; });
+        playMusic.addEventListener('click', () => {
+            music.play().then(() => {
+                playMusic.hidden = true;
+            }).catch(() => {
+                playMusic.hidden = false;
+            });
+        });
+    </script>
+</body>
+</html>
